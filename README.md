@@ -7,4 +7,8 @@
 画一个彩虹
 
 ## heart-demo
-画一个跳动的红心
+画一个跳动的红心，使用hover和transition
+
+## heart-animation
+画一个跳动的红心，使用animation
+
