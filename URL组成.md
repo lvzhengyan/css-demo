@@ -8,7 +8,7 @@ URL全称为：Uniform Resource Locator，翻译成中文就是统一资源定�
 大致了解了什么是URL，再来看看URL的组成吧
 
 ```
-protocal://hostname[:port][/path/][;parameter][?query]#fragment
+protocal://hostname[:port][/path/][;parameter][?query][#fragment]
 ```
 上面中括号表示可选项
 * protocol（协议）：常用的协议是httphostname 主机地址，可以是域名，也可以是IP地址
