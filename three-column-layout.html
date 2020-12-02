@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三栏布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main1::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .main1>.left {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            float: left;
+        }
+
+        .main1>.right {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            float: right;
+        }
+
+        .main1>.center {
+            margin-left: 200px;
+            margin-right: 200px;
+            height: 200px;
+            background-color: green;
+        }
+
+        .main2 {
+            position: relative;
+        }
+
+        .main2>.left {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+
+        .main2>.right {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .main2>.center {
+            height: 200px;
+            background-color: green;
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+
+        .main3 {
+            display: flex;
+        }
+
+        .main3>.left {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+        }
+
+        .main3>.right {
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+        }
+
+        .main3>.center {
+            height: 200px;
+            flex: 1;
+            background-color: green;
+        }
+
+        .main4 {
+            display: grid;
+            grid-template-columns: 200px auto 200px;
+        }
+
+        .main4>.left {
+            height: 200px;
+            background-color: red;
+        }
+
+        .main4>.right {
+            height: 200px;
+            background-color: blue;
+        }
+
+        .main4>.center {
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <p>float 实现三栏布局: 纯float的三栏布局需要把中间的内容放在最后</p>
+    <div class="main1">
+        <div class="left">左边固定宽度</div>
+        <div class="right">右边固定宽度</div>
+        <div class="center">中间宽度自适应</div>
+    </div>
+    <br>
+    <p>position 实现三栏布局: 左右绝对定位，父元素添加相对定位</p>
+    <div class="main2">
+        <div class="left">左边固定宽度</div>
+        <div class="center">中间宽度自适应</div>
+        <div class="right">右边固定宽度</div>
+    </div>
+    <br>
+    <p>flex 实现三栏布局</p>
+    <div class="main3">
+        <div class="left">左边固定宽度</div>
+        <div class="center">中间宽度自适应</div>
+        <div class="right">右边固定宽度</div>
+    </div>
+    <br>
+    <p>grid 实现三栏布局</p>
+    <div class="main4">
+        <div class="left">左边固定宽度</div>
+        <div class="center">中间宽度自适应</div>
+        <div class="right">右边固定宽度</div>
+    </div>
+</body>
+
+</html>
