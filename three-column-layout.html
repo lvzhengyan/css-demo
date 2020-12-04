@@ -107,6 +107,39 @@
             height: 200px;
             background-color: green;
         }
+
+        .main5 {
+            padding-left: 200px;
+            padding-right: 200px;
+        }
+
+        .main5>.left {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            float: left;
+            margin-left: -100%;
+            position: relative;
+            left: -200px;
+        }
+
+        .main5>.right {
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+            float: left;
+            margin-left: -200px;
+            position: relative;
+            right: -200px;
+        }
+
+        .main5>.center {
+            height: 200px;
+            width: 100%;
+            background-color: green;
+            float: left;
+            position: relative;
+        }
     </style>
 </head>
 
@@ -136,6 +169,22 @@
     <div class="main4">
         <div class="left">左边固定宽度</div>
         <div class="center">中间宽度自适应</div>
+        <div class="right">右边固定宽度</div>
+    </div>
+    <br>
+    <p>圣杯布局：中间部分在 DOM 结构上优先，以便先行渲染</p>
+    <div class="main5">
+        <div class="center">
+            <p>1.先给出html结构，注意中间自适应的center元素放在最前面：</p>
+            <p>2.三列的左右两列分别定宽200px和150px，中间部分center设置100%撑满</p>
+            <p>3.设置全部左浮动</p>
+            <p>4.left元素设置margin-left:100%;拉回行头</p>
+            <p>5.right元素设置margin-left: -200px;拉回行尾</p>
+            <p>6.现在的问题就是左右两边的元素覆盖了center元素的内容，我们可以给容器main加上两边padding</p>
+            <p>7.在设置了padding后，左右元素都被挤了进来，我们可以设置position:relative解决，因为浮动元素已经脱离了文档流，所以不能设置absolute。
+                通过设置left和right元素的相对位置，实现定位</p>
+        </div>
+        <div class="left">左边固定宽度</div>
         <div class="right">右边固定宽度</div>
     </div>
 </body>
