@@ -12,7 +12,7 @@
             box-sizing: border-box;
         }
 
-        .main1::after {
+        .clearfix::after {
             content: '';
             display: block;
             clear: both;
@@ -113,6 +113,7 @@
             padding-right: 200px;
         }
 
+
         .main5>.left {
             height: 200px;
             width: 200px;
@@ -140,12 +141,40 @@
             float: left;
             position: relative;
         }
+
+        .main6>.left {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            float: left;
+            margin-left: -100%;
+        }
+
+        .main6>.right {
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+            float: left;
+            margin-left: -200px;
+        }
+
+        .main6>.center {
+            height: 200px;
+            width: 100%;
+            background-color: green;
+            float: left;
+        }
+
+        .content {
+            margin-left: 200px;
+            margin-right: 200px;
+        }
     </style>
 </head>
 
 <body>
     <p>float 实现三栏布局: 纯float的三栏布局需要把中间的内容放在最后</p>
-    <div class="main1">
+    <div class="main1 clearfix">
         <div class="left">左边固定宽度</div>
         <div class="right">右边固定宽度</div>
         <div class="center">中间宽度自适应</div>
@@ -173,10 +202,10 @@
     </div>
     <br>
     <p>圣杯布局：中间部分在 DOM 结构上优先，以便先行渲染</p>
-    <div class="main5">
+    <div class="main5 clearfix">
         <div class="center">
             <p>1.先给出html结构，注意中间自适应的center元素放在最前面：</p>
-            <p>2.三列的左右两列分别定宽200px和150px，中间部分center设置100%撑满</p>
+            <p>2.三列的左右两列分别定宽200px和200px，中间部分center设置100%撑满</p>
             <p>3.设置全部左浮动</p>
             <p>4.left元素设置margin-left:100%;拉回行头</p>
             <p>5.right元素设置margin-left: -200px;拉回行尾</p>
@@ -189,6 +218,19 @@
     </div>
     <br>
     <p>双飞翼布局</p>
+    <div class="main6">
+        <div class="center">
+            <div class="content">
+                <p>圣杯布局和双飞翼布局解决问题的方案在前一半是相同的，也就是三栏全部float浮动，但左右两栏加上负margin让其跟中间栏div并排，
+                    <br>以形成三栏布局。不同在于解决 “中间栏div内容不被遮挡”问题的思路不一样。</p>
+                <br>
+                <p>1.给 center 加一个子元素 inner。</p>
+                <p>2.给 inner 设置 左margin 和 右 margin，将 inner 挤到中间显示。</p>
+            </div>
+        </div>
+        <div class="left">左边固定宽度</div>
+        <div class="right">右边固定宽度</div>
+    </div>
 </body>
 
 </html>
