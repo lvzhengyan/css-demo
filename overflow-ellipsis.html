@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本的单行和多行溢出省略效果</title>
+    <style>
+        .text {
+            overflow: hidden;
+            /* 文字不换行 */
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .muti-text {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="width: 100px;">
+        <p class="text">会溢出吗会溢出吗会溢出会溢出吗会溢出吗会溢出吗会溢出吗会溢出吗会溢出吗会溢出吗会溢出吗会溢出吗</p>
+    </div>
+    <div style="width: 150px;">
+        <p class="muti-text">会溢出吗会溢出吗会溢出会溢出吗会溢出吗会溢出吗会溢出吗会溢出吗会溢出吗会溢出吗会溢出吗会溢出吗</p>
+    </div>
+</body>
+
+</html>
