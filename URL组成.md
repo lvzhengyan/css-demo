@@ -11,7 +11,8 @@ URL全称为：Uniform Resource Locator，翻译成中文就是统一资源定�
 protocal://hostname[:port][/path/][;parameter][?query][#fragment]
 ```
 上面中括号表示可选项
-* protocol（协议）：常用的协议是httphostname 主机地址，可以是域名，也可以是IP地址
+* protocol（协议）：常用的协议是http
+* hostname 主机地址，可以是域名，也可以是IP地址
 * port（端口）：http协议默认端口是：80端口，如果不写默认就是:80端口
 * path（路径）：网络资源在服务器中的指定路径
 * parameter（参数）：如果要向服务器传入参数，在这部分输入
