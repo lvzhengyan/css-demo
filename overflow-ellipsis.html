@@ -10,14 +10,16 @@
             overflow: hidden;
             /* 文字不换行 */
             white-space: nowrap;
+            /* 规定当文本溢出时，显示省略符号来代表被修剪的文本 */
             text-overflow: ellipsis;
         }
 
         .muti-text {
+            /* 使用webkit的css扩展属性，只适用于 webkit浏览器和移动端 */
             display: -webkit-box;
-            overflow: hidden;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
+            overflow: hidden;
         }
     </style>
 </head>
